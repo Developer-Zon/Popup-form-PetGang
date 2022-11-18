@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="This is designed for Pet Gang Store.">
+  <meta name="keywords" content="HTML, CSS, JavaScript,popup,form">
+  <meta name="author" content="Developer Zone Pk">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup From PetGang | Developer Zone </title>
+</head>
+<body>
+    <div class="container popup">
+        <a class="close">×</a>
+        <div>
+            <h3 class="mt-2">
+                <img src="https://cdn.shopify.com/s/files/1/0570/4056/8509/files/bigger_250x150.png?v=1666963603">
+                <p>TELL US ABOUT YOUR PET.</p>
+            </h3>
+        </div>
+
+        <form class="requires-validation " name="google-sheet">
+            <div class="pet-btn">
+                <div style="margin: 20px;font-weight: bolder;">
+                    <label for="pet">Choose your Pet : </label>
+                    <br>
+                </div>
+
+                <!-- Hamsters -->
+                <input type="radio" class="btn-check" for="pet" name="pet" id="Hamster " value="Hamster "
+                    autocomplete="off" required="">
+                <label class=" btn-sm form-btn " style="border:1px solid #6c757d ;" for="Hamster ">Hamster</label>
+                <!-- Tortoise -->
+                <input type="radio" class="btn-check" for="pet" name="pet" id="Tortoise " value="Tortoise "
+                    autocomplete="off" required="">
+                <label class=" btn-sm form-btn" style="border:1px solid #6c757d ;" for="Tortoise">Tortoise </label>
+                <!-- Reptiles -->
+                <input type="radio" class="btn-check" for="pet" name="pet" id="Reptile" value="Reptile"
+                    autocomplete="off" required="">
+                <label class=" btn-sm form-btn" style="border:1px solid #6c757d ;" for="Reptile">Reptile</label>
+                <!-- Chicken -->
+                <input type="radio" class="btn-check" for="pet" name="pet" id="Chicken" value="Chicken"
+                    autocomplete="off" required="">
+                <label class=" btn-sm form-btn" style="border:1px solid #6c757d ;" for="Chicken">Chicken</label>
+                <!-- HEDGEHOG -->
+                <input type="radio" class="btn-check" for="pet" name="pet" id="Hedgehog" value="Hedgehog"
+                    autocomplete="off" required="">
+                <label class=" btn-sm form-btn" style="border:1px solid #6c757d ;" for="Hedgehog">Hedgehog</label>
+                <!-- Cat -->
+                <input type="radio" class="btn-check" for="pet" name="pet" id="cat" value="Cat" autocomplete="off"
+                    required="">
+                <label class=" btn-sm form-btn" style="border:1px solid #6c757d ;" for="cat">Cat</label>
+                <!-- Dog -->
+                <input type="radio" class="btn-check" for="pet" name="pet" id="Dog" value="Dog" autocomplete="off"
+                    required="">
+                <label class=" btn-sm form-btn" style="border:1px solid #6c757d ;" for="Dog">Dog</label>
+                <!-- Chinchillas -->
+                <input type="radio" class="btn-check" for="pet" name="pet" id="Chinchilla" value="Chinchilla"
+                    autocomplete="off" required="">
+                <label class=" btn-sm form-btn" style="border:1px solid #6c757d ;" for="Chinchilla">Chinchilla</label>
+                <!-- Squirell-->
+                <input type="radio" class="btn-check" for="pet" name="pet" id="Squirell" value="Squirell"
+                    autocomplete="off" required="">
+                <label class=" btn-sm form-btn" style="border:1px solid #6c757d ;" for="Squirell">Squirell</label>
+                <!-- PARROTS -->
+                <input type="radio" class="btn-check" for="pet" name="pet" id="Parrot " value="Parrot"
+                    autocomplete="off" required="">
+                <label class=" btn-sm form-btn" style="border:1px solid #6c757d ;" for="Parrot">Parrot</label>
+
+                <!-- <div class="valid-feedback mv-up">You selected a Pet!</div>
+                <div class="invalid-feedback mv-up">Please select a Pet!</div> -->
+            </div>
+            <div class="main-div-form">
+                <div class="form-div">
+                    <input class="form-control my-input" name="pet name" type="text" placeholder="Pet Name" required="">
+                    <!-- <div class="valid-feedback">Pet Name field is valid!</div> -->
+                    <!-- <div class="invalid-feedback">Pet Name field cannot be blank!</div> -->
+                </div>
+                <div class="form-div">
+                    <label class=""style="margin: 20px;font-weight: bolder;" for="date">Let us know when your pet was born and we will
+                        Salute!</label>
+                    <input type="month" class="form-control my-input" id="date" name="date">
+                    <!-- <input class="form-control my-input" type="date" name="date" placeholder="Pet Date"
+                    required=""> -->
+                    <!-- <div class="valid-feedback">Date field is valid!</div>
+                <div class="invalid-feedback">Date field cannot be blank!</div> -->
+                </div>
+                <div class="form-div">
+                    <input class="form-control  my-input" for="client name" type="text" name="client name"
+                        placeholder="Your Name" required="">
+                    <!-- <div class="valid-feedback">Pet Name field is valid!</div>
+                <div class="invalid-feedback">Pet Name field cannot be blank!</div> -->
+                </div>
+                <div class="form-div">
+                    <input type="email" name="email" class="form-control my-input" id="email" placeholder="Email">
+                    <!-- <div class="valid-feedback">Email field is valid!</div>
+                <div class="invalid-feedback">Email field cannot be blank!</div> -->
+                </div>
+                <div class="form-button mt-3 form-check">
+                    <button id="submit" type="submit" class=" custom-submit"> Send!</button>
+                </div>
+            </div>
+
+        </form>
+
+
+    </div>
+    <script>
+        // Popups
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwBOljd_Qv7YFLlvbaGqp_a1AvZp86mBcuKkDFy2nzes-d4nmiW7w26z29nPBWpl6jL/exec'
+        const form = document.forms['google-sheet']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            333333
+        })
+        // Popup close button
+        window.addEventListener("load", function () {
+            setTimeout(
+                function open(event) {
+                    document.querySelector(".popup");
+                },
+                1000
+            )
+        });
+        document.querySelector(".close").addEventListener("click", function () {
+            document.querySelector(".popup").style.display = "none";
+        });
+    </script>
+ 
+</body>
+</html>
